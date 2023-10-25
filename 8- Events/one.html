@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <div>
+      <h1>Images</h1>
+      <ul id="images">
+        <li>
+          <img
+            width="100px"
+            src="https://www.w3schools.com/whatis/img_html.jpg"
+            alt="test"
+            id="html"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            src="https://www.w3schools.com/html/pic_trulli.jpg"
+            alt="test"
+            id="w3"
+          />
+        </li>
+        <li>
+          <img
+            width="100px"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
+            alt="test"
+            id="css"
+          />
+        </li>
+        <li>
+          <img
+            width="100px"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"
+            alt="test"
+            id="react"
+          />
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("css").onclick = function () {
+    //   alert("Clicked On CSS");
+    // };
+
+    // document.getElementById("react").addEventListener("click", function () {
+    //   alert("React Clicked");
+    // });
+
+    // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, default preven
+    // target, toElement
+    // src Element
+    // currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keycode (a,b,c)
+
+    // document.getElementById("react").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log(e);
+    //   },
+    //   false
+    // );
+
+    // Default is false which is event bubling
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Clicked inside the ul");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("html").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Clicked inside the HTML Image");
+    //     e.stopPropagation(); // stop from bubling
+    //   },
+    //   false
+    // );
+
+    // Default is false which is event bubling event from bottom to top
+    // first will owl clicked than ul clicked
+
+    // true is capturing which will run event from top to bottom
+
+    const images = document
+      .querySelector("#images")
+      .addEventListener("click", function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG") {
+          console.log(e.target.id);
+          // removeIt.parentNode.removeChile(removeIt);
+          let removeIt = e.target.parentNode;
+          removeIt.remove();
+        }
+      });
+  </script>
+</html>

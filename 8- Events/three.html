@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Coffee Aur JavaScript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    let intervalID;
+    const sayDate = function (str) {
+      console.log(str, "The Date is ", Date.now());
+    };
+
+    document.querySelector("#start").addEventListener("click", function () {
+      intervalID = setInterval(sayDate, 1000, "Hi");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(intervalID);
+    });
+  </script>
+</html>
